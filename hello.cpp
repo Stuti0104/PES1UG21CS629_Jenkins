@@ -1,32 +1,7 @@
+#include <iostream>
+using namespace std;
 
-pipeline{
-  agent any
-  stages{
-    stage('Build'){
-      steps{
-        build 'PES1UG21CS629-1'
-        sh 'g++ hello.cpp -o output'
-      }
-    }
-    stage('Test'){
-      steps{
-        sh './output'
-      }
-    }
-    stage('Deploy'){
-      steps{
-        echo 'deploy'
-      }
-    }
-  }
-  post{
-    failure{
-      error 'Pipeline failed'
-    }
-  }
+int main(void) {
+  cout << "Hello, World\n";
+  return 0;
 }
-
-//    stage('Clone Repo'){
-//      steps{
-    
-        
